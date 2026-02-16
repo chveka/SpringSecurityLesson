@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>OAuth2 Demo</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header">
+                    <h3>OAuth2 Authentication Demo</h3>
+                </div>
+                <div class="card-body">
+                    <p class="text-center">Choose a provider to login:</p>
+
+                    <div class="d-grid gap-2">
+                        <a href="/oauth2/authorization/google" class="btn btn-primary">
+                            Login with Google
+                        </a>
+                        <a href="/oauth2/authorization/github" class="btn btn-dark">
+                            Login with GitHub
+                        </a>
+                    </div>
+
+                    <div th:if="${param.logout}" class="alert alert-success mt-3">
+                        You have been logged out successfully.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
